@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- 配置 mybatis-generator -->
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+
+        <!-- 只有配置这个MapperAnnotationPlugin插件后，才能够在Mapper接口上生成@Mapper注解
+         Intellij IDEA会使用这个注解进行静态检查，否则当使用@Autowire时IDEA会报错 -->
+        <plugin type="org.mybatis.generator.plugins.MapperAnnotationPlugin"></plugin>
+
+        <commentGenerator>
+            <!-- suppressAllComments: 阻止生成注释，默认为 false -->
+            <property name="suppressAllComments" value="false"/>
+            <!-- suppressDate: 阻止生成的注释包含时间戳，默认为 false -->
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库链接URL、用户名、密码 -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/testdb001"
+                        userId="testuser001"
+                        password="123456">
+        </jdbcConnection>
+
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- forceBigDecimals: 该属性可以控制是否强制DECIMAL和NUMERIC类型的字段
+            转换为Java类型的java.math.BigDecimal，默认值为false，一般不需要配置 -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成模型的包名和位置-->
+        <javaModelGenerator targetPackage="com.aliang.library.entity" targetProject="src/main/java">
+            <!-- 在targetPackage的基础上，根据数据库的schema或catalog再生成一层package，
+            最终生成的类放在这个package下，默认为false。比如，
+            设置为false时，包名为：com.example.model；
+            设置为true时，包名为：com.example.model.[schema]
+            使用mysql驱动连接mysql时，指定数据库是用catalog，而不是schema-->
+            <property name="enableSubPackages" value="true"/>
+            <!-- trimStrings:是否对数据库查询结果进行trim操作，如果设置为true就会生成类似这样
+            public void setUsername(String username)
+            {this.username = username == null ? null : username.trim();}的setter方法。
+            默认值为false。 -->
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件的包名和位置-->
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成DAO（也就是mapper接口）的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.aliang.library.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 以下 table 标签声明的都是要生成的表结构-->
+        <!-- tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，
+        后面的参数不用改，要生成更多的表就在下面继续加table标签 -->
+        <table tableName="l_user" domainObjectName="User"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!-- tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，
+        后面的参数不用改，要生成更多的表就在下面继续加table标签 -->
+        <table tableName="l_book" domainObjectName="Book"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!-- tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，
+        后面的参数不用改，要生成更多的表就在下面继续加table标签 -->
+        <table tableName="l_record" domainObjectName="Record"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!-- tableName是数据库中的表名，domainObjectName是生成的JAVA模型名，
+        后面的参数不用改，要生成更多的表就在下面继续加table标签 -->
+        <table tableName="l_shop" domainObjectName="Shop"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+    </context>
+</generatorConfiguration>
