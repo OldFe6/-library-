@@ -1,0 +1,24 @@
+
+
+#left {
+    padding: 0;
+}
+
+#left ul li {
+    width: 100%;
+}
+
+#left ul li a {
+    font-size: large;
+    letter-spacing: 5px; /*字之间的间距*/
+    border-radius: 0;
+    border: none;
+}
+
+#main a, #main a:hover, #main a:focus, #main a:visited, #main a:active {
+    text-decoration: none;
+}
+
+
+
+
