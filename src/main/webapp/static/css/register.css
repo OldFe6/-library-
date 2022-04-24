@@ -1,0 +1,174 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+body {
+	background: url(../img/bj1.jpg) no-repeat center;
+	background-size: 100% 100%;
+}
+.header {
+	width: 100%;
+	height: 100%;
+	margin-bottom: 50px;
+	padding: 5px;
+}
+.header nav {
+	display: flex;
+	justify-content:center;
+}
+.header nav ul {
+	list-style: none;
+	margin: 5px;
+	display: flex;
+	flex-wrap:wrap;
+	flex-direction: row;
+	font-size: 14px;
+}
+.header nav ul li {
+	background: #2d3436;
+	border-radius: 5px;
+	margin: 10px;
+	padding: 10px;
+	display: block;
+	/*过渡动画*/
+	transition-duration: 0.8s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.header nav ul li a{
+	text-decoration: none;
+	color: #FFFFFF;
+	/*过渡动画*/
+	transition-duration: 1.5s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.header nav ul li:hover {
+	color: #d63031;
+	background: #FFFFFF;
+	box-shadow:5px 5px 5px #888888;
+}
+.header nav ul li:hover a {
+	color: #d63031;
+}
+.form {
+	width: 100%;
+	height: 100%;
+	/*height: 65%;*/
+	display: flex;
+	justify-content: center;
+}
+.form .formbox {
+	background: #1e272e;
+	border-radius: 10px;
+	padding: 50px;
+	/*过渡动画*/
+	transition-duration: 3s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+
+.form .formbox:hover {
+	/*background: #6c5ce7;*/
+	background: #004ea0;
+	box-shadow:5px 7px 8px #2d3436;
+}
+.form .formbox form {
+	background: #FFFFFF;
+	width: 300px;
+	height: 420px;
+	margin: 0 auto;
+	padding: 10px;
+	border-radius: 5px;
+	/*过渡动画*/
+	transition-duration: 2s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+    box-shadow:5px 7px 8px #808e9b;
+}
+.form .formbox:hover form {
+	/*border: double 1px #fd79a8;*/
+	/*background: #ffdd59;*/
+	background: #7df666;
+}
+.form .formbox form p {
+	text-align: left;
+	color: #2d3436;
+	font-size: 14px;
+	font-weight: bold;
+	display: inline;
+	margin:5px 5px 5px 2px;
+}
+.form .formbox form input {
+	margin: 10px;
+	height: 30px;
+	width: 200px;
+}
+.form .formbox form select {
+	margin: 10px;
+	height: 35px;
+	width: 204px;
+}
+.form .formbox form button {
+	width: 200px;
+	height: 35px;
+	margin: 20px 0px 0px 50px;
+	border: 1px solid #57606f;
+	background: #7bed9f;
+	transition-duration: 2s;
+    transition-property: all;
+    transition-timing-function: ease;
+    transition-delay: 0s;
+}
+.form .formbox:hover form button {
+	background: #2d3436;
+	color: #FFFFFF;
+}
+.message3 {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    padding-left: 20px;
+}
+.message1 {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    padding-left: 20px;
+}
+.message {
+    display: inline-block;
+    font-size: 12px;
+    color: #999;
+    padding-left: 20px;
+}
+.yanzheng {
+    display: inline-block;
+    font-size: 10px;
+    color: #999;
+    background: url(../img/mess.png) no-repeat left center;
+    padding-left: 20px;
+}
+.right {
+    color: green;
+    background: url(../img/right.png) no-repeat left center;
+}
+.wrong {
+    color: red;
+    background: url(../img/wrong.png) no-repeat left center;
+}
+footer {
+	background: #ddd;
+	text-align: center;
+	width: 100%;
+	height: 200px;
+	margin-top: 200px;
+	padding: 20px;
+}
+footer h6 {
+	font-size: 16px;
+}
